@@ -17,102 +17,111 @@
 
 <body class="bg-dark text-light">
 
-<!-- ================= PANTALLA DE BIENVENIDA ================= -->
-<div id="welcomeModal" class="welcome-overlay">
-  <div class="welcome-box">
-    <h2>🤖 Bienvenido al Control por Voz</h2>
+    <!-- ================= PANTALLA DE BIENVENIDA ================= -->
+    <div id="welcomeModal" class="welcome-overlay">
+        <div class="welcome-box">
+            <h2>🤖 Bienvenido al Control por Voz</h2>
 
-    <p>
-      Este sistema permite controlar movimientos usando tu voz.
-      Cuando el micrófono esté activo, habla con claridad.
-    </p>
+            <p>
+                Este sistema permite controlar movimientos usando tu voz.
+                Cuando el micrófono esté activo, habla con claridad.
+            </p>
 
-    <ul>
-      <li>Di comandos como avanzar, detener o girar.</li>
-      <li>Puedes hablar naturalmente.</li>
-      <li>El sistema interpretará tu orden automáticamente.</li>
-      <li>Di "Lenny" si el sistema está suspendido.</li>
-    </ul>
+            <ul>
+                <li>Di comandos como avanzar, detener o girar.</li>
+                <li>Puedes hablar naturalmente.</li>
+                <li>El sistema interpretará tu orden automáticamente.</li>
+                <li>Di "Lenny" si el sistema está suspendido.</li>
+            </ul>
 
-    <button id="startSystem">Iniciar sistema</button>
-  </div>
-</div>
-
-<!-- NAVBAR -->
-<nav class="navbar navbar-dark bg-black">
-    <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">🎙️ Control por Voz</span>
-        <span id="status" class="badge bg-success">Micrófono activo</span>
-    </div>
-</nav>
-
-<main class="container-fluid mt-4">
-
-    <div class="text-center mb-4">
-        <h2 id="mode">Modo activo - Realiza la orden de movimiento</h2>
-        <p class="text">
-            Esta aplicación escucha comandos de voz para control de movimiento.
-            Habla claramente cuando el micrófono esté activo.
-        </p>
+            <button id="startSystem">Iniciar sistema</button>
+        </div>
     </div>
 
-    <div class="row g-4 px-3">
+    <nav class="navbar navbar-dark bg-black">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
 
-        <!-- HISTORIAL -->
-        <div class="col-lg-3">
-            <div class="card bg-dark text-light shadow h-100">
-                <div class="card-body">
-                    <h5>📝 Registro de comandos</h5>
-                    <ul id="history" class="list-group list-group-flush text-start"></ul>
-                </div>
+            <span class="navbar-brand mb-0 h1">🎙️ Control por Voz</span>
+
+            <div class="d-flex align-items-center gap-3">
+                <span id="status" class="badge bg-success">Micrófono activo</span>
+
+                <button class="btn btn-outline-info btn-sm" onclick="window.location.href='gestos.html'">
+                    🖐️ Gestos
+                </button>
             </div>
+
+        </div>
+    </nav>
+
+    <main class="container-fluid mt-4">
+
+        <div class="text-center mb-4">
+            <h2 id="mode">Modo activo - Realiza la orden de movimiento</h2>
+            <p class="text">
+                Esta aplicación escucha comandos de voz para control de movimiento.
+                Habla claramente cuando el micrófono esté activo.
+            </p>
         </div>
 
-        <!-- CENTRO -->
-        <div class="col-lg-6">
+        <div class="row g-4 px-3">
 
-            <div class="card bg-secondary text-light shadow mb-4">
-                <div class="card-body text-center">
-                    <h5>🎧 Lo que el sistema escuchó</h5>
-                    <p id="heard" class="fs-5 fst-italic">---</p>
-                </div>
-            </div>
-
-            <div class="card bg-info text-dark shadow">
-                <div class="card-body text-center">
-                    <h5>🧠 Acción detectada por la IA</h5>
-
-                    <div class="listening-container mt-4">
-                        <div id="listeningRing" class="listening-ring"></div>
+            <!-- HISTORIAL -->
+            <div class="col-lg-3">
+                <div class="card bg-dark text-light shadow h-100">
+                    <div class="card-body">
+                        <h5>📝 Registro de comandos</h5>
+                        <ul id="history" class="list-group list-group-flush text-start"></ul>
                     </div>
+                </div>
+            </div>
 
-                    <p id="result" class="fs-4 fw-bold">---</p>
+            <!-- CENTRO -->
+            <div class="col-lg-6">
+
+                <div class="card bg-secondary text-light shadow mb-4">
+                    <div class="card-body text-center">
+                        <h5>🎧 Lo que el sistema escuchó</h5>
+                        <p id="heard" class="fs-5 fst-italic">---</p>
+                    </div>
+                </div>
+
+                <div class="card bg-info text-dark shadow">
+                    <div class="card-body text-center">
+                        <h5>🧠 Acción detectada por la IA</h5>
+
+                        <div class="listening-container mt-4">
+                            <div id="listeningRing" class="listening-ring"></div>
+                        </div>
+
+                        <p id="result" class="fs-4 fw-bold">---</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COMANDOS -->
+            <div class="col-lg-3">
+                <div class="card bg-dark text-light shadow h-100">
+                    <div class="card-body">
+                        <h5>📢 Comandos que puedes decir</h5>
+                        <p>• Avanzar</p>
+                        <p>• Retroceder</p>
+                        <p>• Detener</p>
+                        <p>• Vuelta derecha / izquierda</p>
+                        <p>• 90 grados derecha / izquierda</p>
+                        <p>• 360 grados derecha / izquierda</p>
+                    </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- COMANDOS -->
-        <div class="col-lg-3">
-            <div class="card bg-dark text-light shadow h-100">
-                <div class="card-body">
-                    <h5>📢 Comandos que puedes decir</h5>
-                    <p>• Avanzar</p>
-                    <p>• Retroceder</p>
-                    <p>• Detener</p>
-                    <p>• Vuelta derecha / izquierda</p>
-                    <p>• 90 grados derecha / izquierda</p>
-                    <p>• 360 grados derecha / izquierda</p>
-                </div>
-            </div>
-        </div>
+        <div id="hint" class="text-center mt-4 text fst-italic"></div>
 
-    </div>
+    </main>
 
-    <div id="hint" class="text-center mt-4 text fst-italic"></div>
-
-</main>
-
-<script src="assets/js/app-voz.js"></script>
+    <script src="assets/js/app-voz.js"></script>
 </body>
+
 </html>
