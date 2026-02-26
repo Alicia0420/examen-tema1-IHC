@@ -1,15 +1,46 @@
+/* ====== BASE ====== */
 body {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  color: white;
+  font-family: "Orbitron", sans-serif;
+  background: radial-gradient(circle at top, #0a0f1c, #000000 70%);
+  color: #e0f7ff;
 }
 
+/* ====== NAVBAR ====== */
+.navbar {
+  background: #000000 !important;
+  border-bottom: 1px solid #ffae0055;
+  box-shadow: 0 0 15px #ffae0033;
+}
+
+.navbar-brand {
+  color: #ffae00 !important;
+  text-shadow: 0 0 8px #ffae00aa;
+}
+
+/* ====== CONTENEDOR CAMARA ====== */
 .camera-container {
   position: relative;
   width: 100%;
-  max-width: 650px;   /* antes 1000px */
+  max-width: 650px;
   margin: auto;
+  border-radius: 20px;
+  border: 1px solid #ffae0033;
+  background: rgba(10, 20, 30, 0.6);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 12px #ffae0022,
+    inset 0 0 10px #ffae0011;
+  transition: all 0.3s ease;
 }
 
+.camera-container:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 0 25px #ffae0055,
+    inset 0 0 15px #ffae0022;
+}
+
+/* ====== VIDEO Y CANVAS ====== */
 video, canvas {
   width: 100%;
   border-radius: 20px;
@@ -20,42 +51,72 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
-  transform: scaleX(-1);
 }
 
-
-
+/* ====== OVERLAY SUPERIOR ====== */
 .overlay-info {
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   padding: 15px 25px;
   border-radius: 15px;
   text-align: center;
   z-index: 10;
   backdrop-filter: blur(8px);
+  border: 1px solid #ffae0044;
+  box-shadow: 0 0 15px #ffae0033;
 }
 
 .overlay-info h2 {
   font-size: 1.8rem;
   font-weight: bold;
-  margin: 0;
+  color: #ffae00;
+  text-shadow: 0 0 10px #ffae00aa;
 }
 
 .overlay-info p {
   font-size: 0.9rem;
   margin: 0;
-  color: #d1d5db;
+  color: #ffd580;
 }
 
-/* Panel lateral */
+/* ====== TARJETAS LATERALES ====== */
 .card {
-  border-radius: 20px;
+  border-radius: 14px;
+  border: 1px solid #ffae0033;
+  background: rgba(10, 20, 30, 0.6);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 12px #ffae0022,
+    inset 0 0 10px #ffae0011;
+  transition: all 0.3s ease;
 }
 
-/* Responsive */
+.card:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 0 25px #ffae0055,
+    inset 0 0 15px #ffae0022;
+}
+
+/* ====== SCROLL FUTURISTA ====== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffae0088;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffae00aa;
+}
+
+/* ====== RESPONSIVE ====== */
 @media (max-width: 992px) {
   .overlay-info h2 {
     font-size: 1.3rem;
