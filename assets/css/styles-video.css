@@ -1,0 +1,63 @@
+body {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: white;
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  max-width: 650px;   /* antes 1000px */
+  margin: auto;
+}
+
+video, canvas {
+  width: 100%;
+  border-radius: 20px;
+  transform: scaleX(-1);
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+
+
+.overlay-info {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 25px;
+  border-radius: 15px;
+  text-align: center;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+}
+
+.overlay-info h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.overlay-info p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #d1d5db;
+}
+
+/* Panel lateral */
+.card {
+  border-radius: 20px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .overlay-info h2 {
+    font-size: 1.3rem;
+  }
+}
