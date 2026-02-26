@@ -225,8 +225,6 @@ Orden del usuario: "${text}"
 `;
 
 
-
-
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -249,4 +247,15 @@ Orden del usuario: "${text}"
     console.error(error);
     return "Error al interpretar la orden";
   }
+}
+
+// =====================================================
+// 🔁 TRANSICIÓN A MODO GESTOS
+// =====================================================
+function goToGestos() {
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    window.location.href = "gestos.html";
+  }, 400);
 }

@@ -141,3 +141,16 @@ async function predictWebcam() {
 
 await createGestureRecognizer();
 await startCamera();
+/* ============================= */
+/* TRANSICIÓN A MODO VOZ */
+/* ============================= */
+
+const goToVoiceBtn = document.getElementById("goToVoiceBtn");
+
+goToVoiceBtn.addEventListener("click", () => {
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    window.location.href = "voz.html";
+  }, 400);
+});
